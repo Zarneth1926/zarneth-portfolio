@@ -145,6 +145,8 @@
   transition: background 200ms var(--ease-out), transform 220ms var(--ease-spring);
   min-width: 0;
 }
+.cgrid__profile-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 8px; color: var(--muted); font-size: 12px; font-weight: 700; }
+.cgrid__profile-link:hover { color: var(--orange-ink); }
 .cgrid__mail span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .cgrid__mail svg { color: var(--orange); flex: 0 0 auto; }
 .cgrid__mail:hover { background: rgba(255, 255, 255, 0.10); transform: translateY(-1px); }

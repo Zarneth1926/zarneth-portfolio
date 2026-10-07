@@ -149,6 +149,10 @@
   background: var(--white);
   box-shadow: inset 0 0 0 1px var(--line), 0 10px 24px -16px rgba(6, 12, 26, 0.6);
 }
+.bento__project-label,
+.bento__project-status { display: block; }
+.bento__project-label { color: var(--navy); font-size: 12px; font-weight: 700; }
+.bento__project-status { margin-top: 3px; color: var(--orange-ink); font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 .bento__shot::before {
   content: '';
   position: absolute;

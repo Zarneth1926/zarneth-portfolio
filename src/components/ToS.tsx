@@ -2,10 +2,6 @@ import { ArrowLeft } from '@/components/slab'
 import { useNavigate } from 'react-router-dom'
 import { profile } from '@/data/profile'
 
-/**
- * Terms of Service - PLACEHOLDER. Legal text has to fit YOUR business, so
- * none is supplied. Paste your own terms into the sections below.
- */
 export default function ToS() {
   const navigate = useNavigate()
 
@@ -22,20 +18,20 @@ export default function ToS() {
         </button>
 
         <h1 className="legal-page__title">Terms of Service</h1>
-        <p className="legal-page__updated">Last updated: PLACEHOLDER date</p>
+        <p className="legal-page__updated">Last updated: September 30, 2026</p>
 
         <div className="legal-page__body">
           <h2>Using this site</h2>
-          <p>PLACEHOLDER - tell me what to put here: the basic terms for visiting this site.</p>
+          <p>This site is a personal portfolio for Zarneth Layoso. You may browse the pages and follow the public links provided for projects, profiles, and learning resources.</p>
 
           <h2>Work and payment</h2>
-          <p>PLACEHOLDER - tell me what to put here: how projects are scoped, billed and delivered.</p>
+          <p>The site describes personal projects and learning work. A portfolio page is not a project agreement, service quote, or guarantee of availability.</p>
 
           <h2>Ownership</h2>
-          <p>PLACEHOLDER - tell me what to put here: who owns the work and the content on this site.</p>
+          <p>Project names, technologies, and linked materials belong to their respective owners. Portfolio copy and original site implementation are presented for personal and professional purposes.</p>
 
           <h2>Liability</h2>
-          <p>PLACEHOLDER - tell me what to put here: your limits of liability.</p>
+          <p>Information is provided as a current portfolio snapshot and may change as projects develop. Check the linked project or profile for the most current public information.</p>
 
           <h2>Contact</h2>
           <p>

@@ -2,11 +2,6 @@ import { ArrowLeft } from '@/components/slab'
 import { useNavigate } from 'react-router-dom'
 import { profile } from '@/data/profile'
 
-/**
- * Privacy Policy - PLACEHOLDER. Legal text has to describe YOUR site and what
- * it collects, so none is supplied. Write it (or have a lawyer or a policy
- * generator write it) and paste it into the sections below.
- */
 export default function Privacy() {
   const navigate = useNavigate()
 
@@ -23,20 +18,20 @@ export default function Privacy() {
         </button>
 
         <h1 className="legal-page__title">Privacy Policy</h1>
-        <p className="legal-page__updated">Last updated: PLACEHOLDER date</p>
+        <p className="legal-page__updated">Last updated: September 30, 2026</p>
 
         <div className="legal-page__body">
           <h2>Who this covers</h2>
-          <p>PLACEHOLDER - tell me what to put here: who runs this site and which sites this policy applies to.</p>
+          <p>This portfolio is maintained by Zarneth Layoso and applies to this personal portfolio website.</p>
 
           <h2>What is collected</h2>
-          <p>PLACEHOLDER - tell me what to put here: what the contact form and any analytics collect.</p>
+          <p>If you use the contact form, the site reads the name, email address, and message you enter. The form also includes a hidden anti-spam field. No personal phone number or home address is requested.</p>
 
           <h2>How it is used</h2>
-          <p>PLACEHOLDER - tell me what to put here: what you do with that data and who else sees it.</p>
+          <p>With the default configuration, the site opens your mail client with the message addressed to Zarneth. The site does not publish the information you enter. External profile and project links are governed by their own services.</p>
 
           <h2>How long it is kept</h2>
-          <p>PLACEHOLDER - tell me what to put here: retention periods and how to ask for deletion.</p>
+          <p>The default contact flow does not store form submissions on this website. If you contact Zarneth by email, the message remains subject to the email provider used by you and Zarneth.</p>
 
           <h2>Contact</h2>
           <p>

@@ -9,22 +9,22 @@ export type QA = { q: string; a: string }
 export const FAQS: QA[] = [
   {
     q: 'What do you do?',
-    a: 'PLACEHOLDER - tell me what to put here: the kinds of work you take on, and who it is usually for.',
+    a: 'I build practical web applications and digital systems while developing toward frontend and full-stack roles. My current work includes GenHub, a barangay information and concern management system.',
   },
   {
-    q: 'How fast can you start?',
-    a: 'PLACEHOLDER - tell me what to put here: your usual lead time for small fixes vs. larger projects, and your working hours.',
+    q: 'What are you currently looking for?',
+    a: 'I am open to opportunities that help me grow through real software development work, especially frontend, web development, and junior full-stack roles.',
   },
   {
-    q: 'How much do you charge?',
-    a: 'PLACEHOLDER - tell me what to put here: how you price (hourly, per project, retainer) and how a quote is put together.',
+    q: 'What are you learning now?',
+    a: 'I am improving TypeScript, React architecture and component design, full-stack application architecture, and AI-powered web application concepts.',
   },
   {
     q: 'Where are you based?',
-    a: 'PLACEHOLDER - tell me what to put here: your location or timezone, and which client timezones you overlap with.',
+    a: 'I am based in Central Luzon, Philippines.',
   },
   {
-    q: 'What happens after I write?',
-    a: 'PLACEHOLDER - tell me what to put here: how fast you reply and what the next step looks like.',
+    q: 'What can I send you?',
+    a: 'You can share an opportunity, project idea, or question through the form. The current contact flow opens your mail client with the message addressed to me.',
   },
 ]

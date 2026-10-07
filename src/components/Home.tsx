@@ -38,17 +38,26 @@ export default function Home() {
 
       <div className="home__head">
         <div className="home__headline">
-          <h1 className="home__title" id="home-title">
-            <span className="home__line">
-              {displayName.line1} {displayName.line2}
-            </span>
-          </h1>
+          <div className="home__headline-copy">
+            <span className="home__eyebrow">ASPIRING FULL-STACK DEVELOPER</span>
+            <h1 className="home__title" id="home-title">
+              <span className="home__line">
+                {displayName.line1} {displayName.line2}
+              </span>
+            </h1>
+          </div>
 
           {!phone && (
-            <Link className="home__cta" to="/contact">
-              Get in touch
-              <ArrowUpRight size={16} weight="bold" aria-hidden="true" />
-            </Link>
+            <div className="home__actions">
+              <Link className="home__cta" to="/projects">
+                View My Work
+                <ArrowUpRight size={16} weight="bold" aria-hidden="true" />
+              </Link>
+              <Link className="home__cta home__cta--secondary" to="/contact">
+                Contact Me
+                <ArrowUpRight size={16} weight="bold" aria-hidden="true" />
+              </Link>
+            </div>
           )}
         </div>
 

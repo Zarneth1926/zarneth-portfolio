@@ -58,12 +58,12 @@ export default function ContactGrid() {
   return (
     <section className="pgrid cgrid" aria-labelledby="contact-title">
       <header className="pgrid__head">
-        <span className="pgrid__eyebrow">FAQs / Contact</span>
+        <span className="pgrid__eyebrow">Contact</span>
         <h1 className="pgrid__title" id="contact-title">
-          Your contact headline goes here.
+          Have a project, opportunity, or idea in mind?
         </h1>
         <p className="pgrid__lede">
-          PLACEHOLDER - tell me what to put here: one or two lines inviting people to write and saying what they get back.
+          Let&apos;s connect. Send a message about what you are working on, and I&apos;ll get back to you through the contact details you provide.
         </p>
       </header>
 
@@ -107,6 +107,9 @@ export default function ContactGrid() {
             <a className="cgrid__mail" href={`mailto:${profile.email}`}>
               <EnvelopeSimple size={16} weight="fill" aria-hidden="true" />
               <span>{profile.email}</span>
+            </a>
+            <a className="cgrid__profile-link" href={profile.freeCodeCamp} target="_blank" rel="noopener noreferrer">
+              freeCodeCamp profile <ArrowUpRight size={14} weight="bold" aria-hidden="true" />
             </a>
             <ul className="cgrid__socials" role="list">
               {profile.socials.map((s) => (
@@ -165,16 +168,16 @@ export default function ContactGrid() {
 
               <label className="cgrid__field">
                 <span className="cgrid__label">Email</span>
-                <input type="email" name="email" autoComplete="email" required maxLength={MAX_EMAIL} placeholder="you@yourbusiness.com" />
+                <input type="email" name="email" autoComplete="email" required maxLength={MAX_EMAIL} placeholder="Your email address" />
               </label>
 
               <label className="cgrid__field cgrid__field--grow">
-                <span className="cgrid__label">Tell me more about your business</span>
+                <span className="cgrid__label">Tell me about your project or opportunity</span>
                 <textarea
                   name="message"
                   required
                   maxLength={MAX_MESSAGE}
-                  placeholder="What do you need help with? What are you working with today?"
+                  placeholder="What are you working on?"
                 />
               </label>
 
@@ -197,7 +200,7 @@ export default function ContactGrid() {
                     {status.note}
                   </span>
                 ) : (
-                  <span className="cgrid__hint">Short reassurance line, e.g. your reply time.</span>
+            <span className="cgrid__hint">Your message opens in your mail client for review before sending.</span>
                 )}
               </div>
             </form>

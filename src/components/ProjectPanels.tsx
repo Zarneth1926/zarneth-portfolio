@@ -3,7 +3,7 @@ import { Ticket, Robot, FlowArrow, type Icon } from '@/components/slab'
 import { lazy, Suspense } from 'react'
 import WorkflowSamples from './WorkflowSamples'
 import AIStackGrid from './AIStackGrid'
-import { AppsSection } from './Projects'
+import ProjectsGrid from './ProjectsGrid'
 import { useFunnelModal } from './FunnelModal'
 import { websiteFunnel } from '@/data/funnels'
 
@@ -68,8 +68,8 @@ export function AIWindow() {
 }
 export function AppsWindow() {
   return (
-    <SectionWindow label="Your apps">
-      <AppsSection />
+    <SectionWindow label="Portfolio projects">
+      <ProjectsGrid />
     </SectionWindow>
   )
 }

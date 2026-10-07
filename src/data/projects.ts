@@ -1,98 +1,54 @@
-export type AppStat = { value: string; label: string }
+export type ProjectStatus = 'Active Development' | 'In Development'
 
-export type AppProject = {
+export type PortfolioProject = {
+  id: string
   name: string
-  tagline: string
+  fullTitle: string
+  type: string
+  status: ProjectStatus
   description: string
-  /** Optional - omit for gradient placeholder cards */
-  imageSrc?: string
-  /** CSS object-position override. Defaults to 'top center'. */
-  imagePosition?: string
-  /** External brand color - not a site token. Passed via --app-color inline prop. */
-  accentColor: string
-  stats: AppStat[]
-  badge: string
+  problem?: string
+  users?: string[]
+  frontend?: string[]
+  backend?: string[]
+  database?: string[]
+  deployment?: string[]
+  technologies: string[]
+  repository?: string
+  liveDemo?: string
+  category: 'flagship' | 'portfolio'
 }
 
-/** @deprecated use AppProject */
-export type MobileApp = AppProject
-
-/**
- * Your apps. Every value is a PLACEHOLDER. Screenshots live in
- * public/placeholders/ - swap in your own (960x514 works well).
- */
-const STATS: AppStat[] = [
-  { value: '0', label: 'Stat one' },
-  { value: '0', label: 'Stat two' },
-  { value: '0', label: 'Stat three' },
-]
-
-const DESC = 'PLACEHOLDER - tell me what to put here: what the app does, who it is for, and where it is published.'
-
-export const mobileApps: MobileApp[] = [
+export const portfolioProjects: PortfolioProject[] = [
   {
-    name: 'App Name One',
-    tagline: 'PLACEHOLDER - one-line tagline.',
-    description: DESC,
-    imageSrc: '/placeholders/app-1.jpg',
-    imagePosition: '50% 30%',
-    accentColor: '#2563EB',
-    stats: STATS,
-    badge: 'Badge',
+    id: 'genhub',
+    name: 'GenHub',
+    fullTitle: 'GenHub — Web-Based Barangay Information and Concern Management System',
+    type: 'Capstone Project / Full-Stack Web Application',
+    status: 'Active Development',
+    description:
+      'GenHub is a web-based barangay information and concern management system designed to make barangay services more accessible to residents while helping barangay personnel manage service requests, resident information, announcements, events, and administrative workflows.',
+    problem:
+      'Many barangay transactions require residents to visit the barangay office for document requests, updates, and other services. GenHub aims to provide a more convenient digital workflow for residents while giving barangay personnel a centralized system for managing requests and community information.',
+    users: ['Residents', 'Barangay Staff', 'Barangay Secretary', 'Barangay Captain'],
+    frontend: ['React', 'Vite', 'Tailwind CSS'],
+    backend: ['Node.js', 'Express'],
+    database: ['MySQL'],
+    deployment: ['Vercel — Frontend', 'Railway — Backend', 'Aiven — Production MySQL Database'],
+    technologies: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express', 'MySQL'],
+    liveDemo: 'https://genhub-umber.vercel.app',
+    category: 'flagship',
   },
   {
-    name: 'App Name Two',
-    tagline: 'PLACEHOLDER - one-line tagline.',
-    description: DESC,
-    imageSrc: '/placeholders/app-2.jpg',
-    accentColor: '#7C3AED',
-    stats: STATS,
-    badge: 'Badge',
-  },
-  {
-    name: 'App Name Three',
-    tagline: 'PLACEHOLDER - one-line tagline.',
-    description: DESC,
-    imageSrc: '/placeholders/app-3.jpg',
-    accentColor: '#16A34A',
-    stats: STATS,
-    badge: 'Badge',
-  },
-]
-
-export const webApps: AppProject[] = [
-  {
-    name: 'Web App One',
-    tagline: 'PLACEHOLDER - one-line tagline.',
-    description: DESC,
-    accentColor: '#0EA5E9',
-    stats: STATS,
-    badge: 'Badge',
-  },
-  {
-    name: 'Web App Two',
-    tagline: 'PLACEHOLDER - one-line tagline.',
-    description: DESC,
-    accentColor: '#EF4444',
-    stats: STATS,
-    badge: 'Badge',
-  },
-  {
-    name: 'Web App Three',
-    tagline: 'PLACEHOLDER - one-line tagline.',
-    description: DESC,
-    imageSrc: '/placeholders/project-3.jpg',
-    accentColor: '#0891B2',
-    stats: STATS,
-    badge: 'Badge',
-  },
-  {
-    name: 'Web App Four',
-    tagline: 'PLACEHOLDER - one-line tagline.',
-    description: DESC,
-    imageSrc: '/placeholders/project-4.jpg',
-    accentColor: '#F59E0B',
-    stats: STATS,
-    badge: 'Badge',
+    id: 'portfolio-v2',
+    name: 'Zarneth Portfolio V2',
+    fullTitle: 'Zarneth Portfolio V2',
+    type: 'Personal Developer Portfolio',
+    status: 'In Development',
+    description:
+      'A modern developer portfolio designed to present my projects, technical skills, development journey, learning progress, and credentials through a responsive and interactive web experience.',
+    technologies: ['React', 'TypeScript', 'Vite', 'React Router', 'Three.js', 'GSAP', 'Lenis', 'CSS'],
+    repository: 'https://github.com/Zarneth1926/zarneth-portfolio',
+    category: 'portfolio',
   },
 ]

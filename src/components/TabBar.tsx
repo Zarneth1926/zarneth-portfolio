@@ -19,9 +19,9 @@ import { motionReduced } from '@/lib/a11y'
  */
 const TABS = [
   { label: 'Home', to: '/', Icon: House },
-  { label: 'Work', to: '/projects', Icon: FolderOpen },
+  { label: 'Projects', to: '/projects', Icon: FolderOpen },
   { label: 'Contact', to: '/contact', Icon: EnvelopeSimple, primary: true },
-  { label: 'Services', to: '/services', Icon: Stack },
+  { label: 'Tech Stack', to: '/services', Icon: Stack },
   { label: 'About', to: '/about', Icon: User },
 ] as const
 

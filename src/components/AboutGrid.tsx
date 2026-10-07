@@ -1,33 +1,6 @@
 import type { CSSProperties } from 'react'
-import { ArrowUpRight, MapPin } from '@/components/slab'
+import { MapPin } from '@/components/slab'
 import { profile } from '@/data/profile'
-
-/**
- * AboutGrid - the About view as a fixed viewport.
- *
- * One glass sheet, two columns: who you are on the left, the illustration
- * on the right. Sized to the panel, so nothing here scrolls.
- *
- * The left column is a ladder, not a paragraph block: one display statement,
- * one line of context, then the four things you do - each carrying the marks
- * of the tools it is built with. The tools are the proof, so they are the
- * visual. Swap the marks below for your own (any square SVG/PNG in public/).
- */
-
-const N8N = { src: '/icons/ai/n8n.svg', name: 'n8n' }
-const ZAPIER = { src: '/icons/ai/zapier.svg', name: 'Zapier' }
-const DOCKER = { src: '/icons/ai/docker.svg', name: 'Docker' }
-const CLAUDE = { src: '/icons/ai/claude-color.svg', name: 'Claude' }
-const CODEX = { src: '/icons/ai/codex.svg', name: 'Codex' }
-const GLM = { src: '/icons/ai/zhipu.svg', name: 'GLM' }
-const QWEN = { src: '/icons/ai/qwen.svg', name: 'Qwen' }
-const HERMES = { src: '/icons/ai/hermes.svg', name: 'Hermes' }
-const NAMECHEAP = { src: '/icons/ai/namecheap.svg', name: 'Namecheap' }
-const CLOUDFLARE = { src: '/icons/ai/cloudflare.svg', name: 'Cloudflare' }
-const GITHUB = { src: '/icons/ai/github.svg', name: 'GitHub' }
-const GWS = { src: '/icons/googleworkspace.svg', name: 'Google Workspace' }
-const SLACK = { src: '/icons/ai/slack-color.svg', name: 'Slack' }
-const FIREFLIES = { src: '/icons/ai/fireflies.png', name: 'Fireflies' }
 
 type Capability = {
   index: string
@@ -38,23 +11,37 @@ type Capability = {
 const CAPABILITIES: Capability[] = [
   {
     index: '01',
-    title: 'Your role 1',
-    marks: [N8N, ZAPIER, DOCKER],
+    title: 'Frontend foundations',
+    marks: [
+      { src: '/icons/ai/react.svg', name: 'React' },
+      { src: '/icons/ai/vite.svg', name: 'Vite' },
+      { src: '/icons/ai/tailwindcss.svg', name: 'Tailwind CSS' },
+    ],
   },
   {
     index: '02',
-    title: 'Your role 2',
-    marks: [CLAUDE, CODEX, GLM, QWEN, HERMES],
+    title: 'Backend and APIs',
+    marks: [
+      { src: '/icons/ai/nodedotjs.svg', name: 'Node.js' },
+      { src: '/icons/ai/react.svg', name: 'Express and React integration' },
+    ],
   },
   {
     index: '03',
-    title: 'Your role 3',
-    marks: [CLAUDE, CODEX, NAMECHEAP, CLOUDFLARE, GITHUB],
+    title: 'Practical software building',
+    marks: [
+      { src: '/icons/ai/github.svg', name: 'GitHub' },
+      { src: '/icons/vscode.svg', name: 'VS Code' },
+    ],
   },
   {
     index: '04',
-    title: 'Your role 4',
-    marks: [GWS, SLACK, FIREFLIES],
+    title: 'Growing toward full-stack',
+    marks: [
+      { src: '/icons/ai/nodedotjs.svg', name: 'Node.js' },
+      { src: '/icons/ai/vite.svg', name: 'Vite' },
+      { src: '/icons/ai/github.svg', name: 'GitHub' },
+    ],
   },
 ]
 
@@ -63,96 +50,66 @@ export default function AboutGrid() {
     <section className="pgrid agrid" aria-labelledby="about-title">
       <header className="pgrid__head">
         <span className="pgrid__eyebrow">About</span>
-        <h1 className="pgrid__title" id="about-title">
-          {`Hi, I’m ${profile.firstName}.`}
-        </h1>
-        <p className="pgrid__lede">
-          PLACEHOLDER - tell me what to put here: one line on what you do.
-        </p>
+        <h1 className="pgrid__title" id="about-title">Hi, I&apos;m {profile.firstName}.</h1>
+        <p className="pgrid__lede">A BS Information Technology student focused on web development and growing toward full-stack development.</p>
       </header>
 
       <div className="home__glass agrid__glass">
         <div className="agrid__copy">
           <p className="agrid__lead">
-            Your big statement goes here, in one or two lines.
-            <span> A softer second half that finishes the thought.</span>
+            I enjoy building practical digital systems and solving logical and technical problems.
+            <span> I care about both the implementation and the user experience.</span>
           </p>
 
           <p className="agrid__note">
-            <strong>Your company name</strong>, and{' '}
-            <a className="agrid__link" href="#">
-              your product
-            </a>{' '}
-            - PLACEHOLDER - tell me what to put here: two sentences on your company, what
-            you sell or build, and who it is for.
+            I am a <strong>3rd Year BS Information Technology student</strong> at Our Lady of Lourdes College. My current focus is strengthening frontend and backend foundations through projects that help me understand APIs, databases, deployment, and how complete web systems connect.
           </p>
 
           <ul className="agrid__caps" role="list">
-            {CAPABILITIES.map((c) => (
-              <li key={c.index} className="agrid__cap">
+            {CAPABILITIES.map((capability) => (
+              <li key={capability.index} className="agrid__cap">
                 <span className="agrid__cap-marks">
-                  {c.marks.map((m, i) => (
-                    <span
-                      key={m.name}
-                      className="agrid__mark"
-                      style={{ '--i': c.marks.length - i } as CSSProperties}
-                    >
-                      <img src={m.src} alt={m.name} loading="lazy" decoding="async" />
+                  {capability.marks.map((mark, i) => (
+                    <span key={mark.name} className="agrid__mark" style={{ '--i': capability.marks.length - i } as CSSProperties}>
+                      <img src={mark.src} alt={mark.name} loading="lazy" decoding="async" />
                     </span>
                   ))}
                 </span>
-                <span className="agrid__cap-title">{c.title}</span>
-                <span className="agrid__cap-index" aria-hidden="true">
-                  {c.index}
-                </span>
+                <span className="agrid__cap-title">{capability.title}</span>
+                <span className="agrid__cap-index" aria-hidden="true">{capability.index}</span>
               </li>
             ))}
           </ul>
 
-          {/* One plate, two cells sharing a mark / title / meta anatomy. */}
           <div className="agrid__bar">
             <span className="agrid__cell">
-              <span className="agrid__cell-mark agrid__cell-mark--img">
-                <img src="/placeholders/badge.svg" alt="" loading="lazy" decoding="async" />
-              </span>
+              <span className="agrid__cell-mark"><MapPin size={16} weight="fill" aria-hidden="true" /></span>
               <span className="agrid__cell-copy">
-                <span className="agrid__cell-title">Credential name</span>
-                <span className="agrid__cell-meta">Credential ID</span>
+                <span className="agrid__cell-title">{profile.location}</span>
+                <span className="agrid__cell-meta">Based in Central Luzon</span>
               </span>
             </span>
 
             <span className="agrid__cell">
-              <span className="agrid__cell-mark">
-                <MapPin size={16} weight="fill" aria-hidden="true" />
-              </span>
+              <span className="agrid__cell-mark"><span aria-hidden="true">3Y</span></span>
               <span className="agrid__cell-copy">
-                <span className="agrid__cell-title">{profile.location}</span>
-                <span className="agrid__cell-meta">Timezone · working hours</span>
+                <span className="agrid__cell-title">Our Lady of Lourdes College</span>
+                <span className="agrid__cell-meta">BS Information Technology · 3rd Year</span>
               </span>
             </span>
 
-            <a className="agrid__cell agrid__cell--wide" href="#">
-              <span className="agrid__cell-mark agrid__cell-mark--plain">
-                <img src="/placeholders/logo.svg" alt="" loading="lazy" decoding="async" />
-              </span>
+            <span className="agrid__cell agrid__cell--wide">
+              <span className="agrid__cell-mark agrid__cell-mark--plain"><span aria-hidden="true">→</span></span>
               <span className="agrid__cell-copy">
-                <span className="agrid__cell-title">Community or affiliation</span>
-                <span className="agrid__cell-meta">Your role there</span>
+                <span className="agrid__cell-title">Frontend → Full-Stack Development</span>
+                <span className="agrid__cell-meta">Current direction</span>
               </span>
-              <ArrowUpRight className="agrid__cell-go" size={15} weight="bold" aria-hidden="true" />
-            </a>
+            </span>
           </div>
         </div>
 
         <div className="agrid__portrait">
-          <img
-            src="/avatar.svg"
-            alt="Portrait placeholder"
-            loading="eager"
-            decoding="async"
-            width={400}
-            height={400}
-          />
+          <img src={profile.hero.portraitSrc} alt={profile.hero.portraitAlt} loading="eager" decoding="async" width={400} height={400} />
         </div>
       </div>
     </section>
