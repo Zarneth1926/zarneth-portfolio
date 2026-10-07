@@ -112,11 +112,12 @@ const frag = `
     float w       = fwidth(bands) * HAIRLINE_PIXELS * 0.5;
     float line    = 1.0 - smoothstep(0.0, w, dist);
 
-    // Theme colors (kept identical to v1 so the rest of the page does not shift).
-    vec3 bgLight   = vec3(0.957, 0.957, 0.929); // #F4F4ED cream
-    vec3 lineLight = vec3(0.46,  0.46,  0.46);  // soft neutral gray contour on cream
-    vec3 bgDark    = vec3(0.024, 0.047, 0.102); // #060C1A navy ink
-    vec3 lineDark  = vec3(1.0,   1.0,   1.0);   // solid white on navy (black would be invisible)
+    // Monochrome atmospheric contour field. These match the design tokens'
+    // warm paper and graphite themes without making the canvas a centerpiece.
+    vec3 bgLight   = vec3(0.961, 0.961, 0.953); // #F5F5F3
+    vec3 lineLight = vec3(0.38,  0.38,  0.37);  // restrained graphite contour
+    vec3 bgDark    = vec3(0.051, 0.051, 0.051); // #0D0D0D
+    vec3 lineDark  = vec3(0.82,  0.82,  0.81);  // soft off-white on graphite
 
     vec3 bg      = mix(bgLight, bgDark, uDarkMix);
     vec3 lineCol = mix(lineLight, lineDark, uDarkMix);
@@ -124,11 +125,8 @@ const frag = `
     // Tiny cursor-velocity highlight so flicks leave a faint glow.
     lineCol += cursor * 0.04;
 
-    // Line opacity: soft, tonal beige hairlines - lower alpha so
-    // the contours read as a warm beige tint rather than stark black. The lower
-    // contrast also hides most of the half-res upscale aliasing. Dark sections
-    // use white lines on navy, kept legible at a similar low alpha.
-    float lineAlpha = line * mix(0.55, 0.45, uDarkMix);
+    // Low contrast keeps the canvas atmospheric and preserves text hierarchy.
+    float lineAlpha = line * mix(0.38, 0.32, uDarkMix);
     vec3 color = mix(bg, lineCol, lineAlpha);
 
     gl_FragColor = vec4(color, 1.0);

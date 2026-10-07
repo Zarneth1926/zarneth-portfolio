@@ -170,7 +170,7 @@ export default function ProjectsGrid() {
       )}
 
       <div className="home__glass pgrid__glass">
-        <span className="pgrid__hint" aria-hidden="true"><CursorClick size={14} weight="duotone" /> Click a card to open it</span>
+        <span className="pgrid__hint" aria-hidden="true"><CursorClick size={14} weight="duotone" /> Select a project to view details</span>
         <div className="bento bento--projects">
           {projects.map((project) => (
             <button

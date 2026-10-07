@@ -45,6 +45,9 @@ import './styles/a11y.css'
 import './styles/apple.css'
 // Mobile motion + component pass on top of it (phone shell only).
 import './styles/mobile-pass.css'
+// Phase 2 visual identity overlay. It intentionally follows the previous
+// passes so the monochrome system wins without touching component behavior.
+import './styles/editorial.css'
 // Last: the perf tiers only ever turn things OFF, so they must win.
 import './styles/perf.css'
 
