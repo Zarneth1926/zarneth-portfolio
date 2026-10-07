@@ -27,7 +27,7 @@ import { useEffect, useState } from 'react'
 const GATE =
   '(pointer: fine) and (hover: hover) and (min-width: 900px) and (prefers-reduced-motion: no-preference)'
 
-const RING_SIZE = 36
+const RING_SIZE = 20
 
 type RingState = 'default' | 'grow' | 'open' | 'drag' | 'hidden'
 
